@@ -36,13 +36,13 @@ Example: https://searchshare.proofs.sh/compare/6/8
 /TLDR
 
 ## Getting started
-To explore search results that have been submitted by users, simply visit the website: https://searchshare.proofs.sh/
+To explore search results that have been submitted by users, simply visit the website: https://searchshare.proofs.sh/compare/6/8
 
 The process for submitting your own search results requires a few setup steps, see this doc: 
 
 
 ## How does it work?
-The PoC utilises TLS Notary as the mechanism for signing (notarising) web pages.  Signed web pages are then submitted to a centralised service, which parses & presents the ranking data to end users (website visitors).
+The PoC utilises TLS Notary as the mechanism for signing (notarising) web pages.  Signed web pages are then submitted to a centralised service, which parses & presents the ranking data to users.
 
 The PoC works with:
 - Duckduckgo
@@ -69,7 +69,7 @@ The decision for a centralised vs decentralised architecture for this PoC was ma
 ## This all sounds like BS, I don't believe you
 No offence taken, happy for you to prove me wrong.  But if that's "just like your opinion, man", well...
 
-But if you want to actually dig deeper, I'll give you some starting points here: 
+But if you want to actually dig deeper, I'll give you some starting points here: [Digging Deeper](https://github.com/rjaus/search-share-docs/blob/master/digging-deeper.md)
 
 ![Thats just your opinion man](attachments/thats-just-like-your-opinion-man-the-dude.gif)
 
