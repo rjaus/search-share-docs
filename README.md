@@ -3,7 +3,7 @@
 ### What is it?
 SearchShare is a PoC for sharing verified search engine results between users.
 
-It enables a user to submit a copy of the search result they've received from a search engine, in a manner which does not enable the user to tamper or manipulate the results received in any manner.  In doing so, it enables at trustless relationship between users.
+It enables a user to submit a copy of the search result they've received from a search engine, in a manner which does not enable the user to tamper or manipulate the results received.  In doing so, it enables at trustless relationship between users.
 
 Once search results have been submitted, users visit the website to compare results between users, between queries & between search engines.
 
