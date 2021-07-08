@@ -24,7 +24,15 @@ Lets say one day you ponder the question:
 
 How would you solve this problem?
 
-Screenshots is an obvious solution, but lets add a complication, **you don't trust your friends to provide accurate results**.  Either through malicious intent, or technical incompetence, you can not rely on your friends to provide accurate results.
+Screenshots is an obvious solution, but lets add a complication, **you don't trust your friends to provide accurate results**.  
+
+Either through malicious intent, or technical incompetence, you can not rely on your friends to provide accurate results. Technical incompetence could include an inability to take a screenshots, taking screenshots which miss vital details, full length screenshots vs visible area of browser, screenshots which include sensitive details outside the browser window.
+
+##### Some problems with screenshots:
+- Not easily machine readable (requires OCR or machine learning to extract data)
+- Do not verify any details of the data source
+- Can be manipulated after they've been taken
+- Websites can be manipulated prior to screenshots being taken
 
 ## Solution
 Search Share solves this problem by having users submit signed (notarised) copies of their search results, which can then be parsed and compared.
@@ -38,11 +46,11 @@ Example: https://searchshare.proofs.sh/compare/6/8
 ## Getting started
 To explore search results that have been submitted by users, simply visit the website: https://searchshare.proofs.sh/compare/6/8
 
-The process for submitting your own search results requires a few setup steps, see this doc: 
+The process for submitting your own search results requires a few setup steps, see this doc: [How to submit search results](https://github.com/rjaus/search-share-docs/blob/master/How-to-submit.md)
 
 
 ## How does it work?
-The PoC utilises TLS Notary as the mechanism for signing (notarising) web pages.  Signed web pages are then submitted to a centralised service, which parses & presents the ranking data to users.
+The PoC utilises [TLS Notary](https://tlsnotary.org/) as the mechanism for signing (notarising) web pages.  Signed web pages are then submitted to a centralised service, which parses & presents the ranking data to users.
 
 The PoC works with:
 - Duckduckgo
@@ -66,10 +74,10 @@ As a centralised service, the visitor does need to trust that the centralised se
 
 The decision for a centralised vs decentralised architecture for this PoC was made primarily with the intent of releasing the PoC quickly and continue iterating.  See later section for discussion for further explanation.
 
-## This all sounds like BS, I don't believe you
+## I don't believe you, this sounds like BS
 No offence taken, happy for you to prove me wrong.  But if that's "just like your opinion, man", well...
 
-But if you want to actually dig deeper, I'll give you some starting points here: [Digging Deeper](https://github.com/rjaus/search-share-docs/blob/master/digging-deeper.md)
+**But if you want to actually dig deeper, I'll give you some starting points here: [Digging Deeper](https://github.com/rjaus/search-share-docs/blob/master/digging-deeper.md)**
 
 ![Thats just your opinion man](attachments/thats-just-like-your-opinion-man-the-dude.gif)
 
@@ -77,10 +85,8 @@ But if you want to actually dig deeper, I'll give you some starting points here:
 
 
 
-## Going Deeper, Problem(s)
-### WIP
 
-## Possible Solutions
+## Other Possible Solutions
 ### Screenshots
 Users could take screenshots of their search results and submit them.
 
@@ -97,13 +103,11 @@ Issues:
 - Not real users, questionable accuracy of results compared to real user audience
 - Bot protection / defence mechanisms, lowers efficiency and longevity of dev effort, and could further poising of results (if bot protection results in modified / filtered results, which goes unnoticed)
 
+#### Proxy / Network Level Intercept
+You could provide a proxy to the users and collect search data through the proxy.
+
+Problems:
+- Quite invasive from a user/privacy perspective
+- Modifies / manipulates some aspects of the interactions, potentially poisoning data (location, ip address, grouping of users).  Although cookies and tracking data attribution would remain in tact.
 
 
-### Centralised vs Decentralised solution
-The centralised nature of the PoC is a shortcut to avoid solving a few problems which present themselves in a fully decentralised solution.
-
-While a decentralised solution has the capacity to improve security & privacy for users, in it's present configuration it presents security & privacy issues for users.
-
-Signed pages are currently presented in an 'all or nothing' state, in which the user is unable to retract or remove details which may present privacy or security issues.  Through sharing a signed page, there is a possibility to conduct session takeover, through the use of the cookies or leak sensitive private data.
-
-As these issues have not been solved through a technical means a this stage, the centralised approach was determined for the proof of concept.  In doing so, explicit warnings have been made to users to ensure they are informed of the risks associated with submitted a proof, and trusting the centralised service.  Additionally, pagesigned data will be periodically purged from the database to ensure incidentally submitted sensitive data is not stored long term.
